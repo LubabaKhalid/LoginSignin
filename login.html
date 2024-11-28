@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login Form</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    
+    h2 {
+      text-align: center;
+      padding: 20px 0;
+      color: #333;
+    }
+
+    form {
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .container {
+      margin-bottom: 16px;
+    }
+
+    .container label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 6px;
+      color: #333;
+    }
+
+    .container input[type="text"],
+    .container input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+
+    .container input[type="text"]:focus,
+    .container input[type="password"]:focus {
+      border-color: #04AA6D;
+      outline: none;
+    }
+
+    .container input[type="checkbox"] {
+      margin-right: 10px;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      background-color: #04AA6D;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+
+    .cancelbtn {
+      background-color: #f44336;
+      width: auto;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .cancelbtn:hover {
+      opacity: 0.8;
+    }
+
+    .psw {
+      float: right;
+      padding-top: 16px;
+      font-size: 14px;
+    }
+
+    .psw a {
+      text-decoration: none;
+      color: #04AA6D;
+    }
+
+    /* Responsive adjustments */
+    @media screen and (max-width: 600px) {
+      form {
+        width: 90%;
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Login </h2>
+
+  <form action="/action_page.php" method="post">
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+<br>
+<br>
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+<br>
+<br>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container">
+      <button type="submit">Login</button>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+
+    <span class="account">Don't have an acount? <a href="#">Registered</a></span>
+  </form>
+
+</body>
+</html>
