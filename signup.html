@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sign up</title>
+  <title>Sign Up</title>
   <style>
     body {
       font-family: Arial, Helvetica, sans-serif;
@@ -40,6 +40,7 @@
     }
 
     .container input[type="text"],
+    .container input[type="email"],
     .container input[type="password"] {
       width: 100%;
       padding: 12px;
@@ -50,6 +51,7 @@
     }
 
     .container input[type="text"]:focus,
+    .container input[type="email"]:focus,
     .container input[type="password"]:focus {
       border-color: #04AA6D;
       outline: none;
@@ -87,15 +89,16 @@
       opacity: 0.8;
     }
 
-    .psw {
-      float: right;
-      padding-top: 16px;
+    .account {
+      text-align: center;
       font-size: 14px;
+      display: block;
+      margin-top: 10px;
     }
 
-    .psw a {
-      text-decoration: none;
+    .account a {
       color: #04AA6D;
+      text-decoration: none;
     }
 
     /* Responsive adjustments */
@@ -112,32 +115,31 @@
 </head>
 <body>
 
-  <h2>Sign Up </h2>
+  <h2>Sign Up</h2>
 
-  <form action="/action_page.php" method="post">
-
-    <div class="container">
-      <input type="text" placeholder="Your name" name="uname" required> </div>
-<br>
-
-
-<div class="container">
-    <input type="password" placeholder="Email address" name="psw" required></div>
-    
-
-<br>
-
-<div class="container">
-<input type="password" placeholder="Password" name="psw" required></div>
-
-   
-<br>
+  <form action="actions.php" method="post">
 
     <div class="container">
-      <button type="submit">Login</button>
+      <input type="text" placeholder="Your name" name="uname" required>
+    </div>
+    <br>
+
+    <div class="container">
+      <input type="email" placeholder="Email address" name="email" required>
+    </div>
+    <br>
+
+    <div class="container">
+      <input type="password" placeholder="Password" name="psw" required>
+    </div>
+    <br>
+
+    <div class="container">
+      <button type="submit">Sign Up</button>
     </div>
 
-    <span class="account">Have an acount? <a href="C:\Users\PMLS\Desktop\ShoppingCenter\login.html">login</a></span>
+    <span class="account">Already have an account? <a href="login.html">Login</a></span>
+
   </form>
 
 </body>
