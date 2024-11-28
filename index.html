@@ -1,25 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>website</title>
-        <!-- Google Font: Lobster -->
-        <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="styles.css"> 
-    </head>
-    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website</title>
+    <!-- Google Font: Lobster -->
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        a:hover {
+            background-color: #e0e0e0;
+            transform: scale(1.05); /* Slight zoom effect */
+        }
+
+        .menu-bar {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .menu-bar li {
+            padding: 10px;
+        }
+
+        .menu-bar a {
+            color: white;
+            font-size: 18px;
+        }
+
+        .menu-bar a.active {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .menu-bar a.red-button {
+            background-color: #e74c3c;
+            border: none;
+            color: white;
+        }
+
+        .second-menu {
+            background-color: #444;
+            margin-top: 10px;
+        }
+
+        .second-menu a {
+            color: white;
+            padding: 10px 15px;
+            font-size: 16px;
+        }
+
+        .second-menu a:hover {
+            background-color: #555;
+        }
+
+        /* Shopping Center Text */
+        .shopping-center {
+            text-align: center;
+            padding: 50px;
+            background-color: #04AA6D;
+            color: white;
+            font-size: 40px;
+            font-family: 'Lobster', cursive;
+        }
+
+        .gradient-background {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('path_to_your_image.jpg') center/cover no-repeat;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .gradient-background header h1 {
+            font-size: 50px;
+            color: white;
+            font-family: 'Lobster', cursive;
+        }
+
+        /* Flexbox for Navigation Items */
+        .nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .nav-item {
+            flex: 1;
+            min-width: 130px;
+        }
+    </style>
+</head>
+
 <body>
     <!-- First Menu -->
     <ul class="menu-bar">
         <li><a class="active" href="#home">HOME</a></li>
-        <li><a href="#contact">CONTACT US</a></li>
+        <li><a href="C:\Users\PMLS\Desktop\ShoppingCenter\contact.html">CONTACT US</a></li>
         <li><a href="#about">ABOUT</a></li>
-        <li><a href="C:\Users\PMLS\Desktop\ids_project_1\login.html">LOG IN</a></li>
+        <li><a href="C:\Users\PMLS\Desktop\ShoppingCenter\login.html">LOG IN</a></li>
         <li><a class="red-button" href="#signup">SIGN UP</a></li>
     </ul>
-    <br>
-    <br>
+
     <!-- Second Menu -->
     <ul class="menu-bar second-menu">
         <li><a href="#shop">SHOP</a></li>
@@ -36,10 +140,18 @@
         <h1>Shopping Center</h1>
     </div>
 
+    <!-- Gradient Background with Header -->
     <div class="gradient-background">
         <header>
-            <h1></h1>
+            <h1>Welcome to Our Shop</h1>
         </header>
+    </div>
+
+    <!-- Navigation Links (Optional) -->
+    <div class="nav">
+        <div class="nav-item"><a href="#">Link 1</a></div>
+        <div class="nav-item"><a href="#">Link 2</a></div>
+        <div class="nav-item"><a href="#">Link 3</a></div>
     </div>
 </body>
 </html>
