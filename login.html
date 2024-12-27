@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Login Form</title>
+  <title>Login</title>
   <style>
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background-color: #f4f4f4;
+      font-family: 'Arial', Helvetica, sans-serif;
+      background-color: #f9f9f9;
       margin: 0;
       padding: 0;
     }
-    
+
     h2 {
       text-align: center;
       padding: 20px 0;
@@ -51,7 +51,7 @@
 
     .container input[type="text"]:focus,
     .container input[type="password"]:focus {
-      border-color: #04AA6D;
+      border-color: #2C3E50;
       outline: none;
     }
 
@@ -62,29 +62,17 @@
     button {
       width: 100%;
       padding: 14px;
-      background-color: #04AA6D;
+      background-color: #2C3E50;
       color: white;
       border: none;
       border-radius: 4px;
       cursor: pointer;
       font-size: 16px;
+      transition: background-color 0.3s;
     }
 
     button:hover {
-      opacity: 0.8;
-    }
-
-    .cancelbtn {
-      background-color: #f44336;
-      width: auto;
-      padding: 10px 20px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-
-    .cancelbtn:hover {
-      opacity: 0.8;
+      background-color: #34495E;
     }
 
     .psw {
@@ -95,7 +83,18 @@
 
     .psw a {
       text-decoration: none;
-      color: #04AA6D;
+      color: #2C3E50;
+    }
+
+    .account {
+      text-align: center;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    .account a {
+      color: #2C3E50;
+      text-decoration: none;
     }
 
     /* Responsive adjustments */
@@ -103,30 +102,26 @@
       form {
         width: 90%;
       }
-
-      button {
-        width: 100%;
-      }
     }
   </style>
 </head>
 <body>
 
-  <h2>Login </h2>
+  <h2>Login</h2>
 
   <form action="/action_page.php" method="post">
 
     <div class="container">
-      <label for="uname"><b>Username</b></label>
       <input type="text" placeholder="Enter Username" name="uname" required>
-<br>
-<br>
-      <label for="psw"><b>Password</b></label>
+    </div>
+
+    <div class="container">
       <input type="password" placeholder="Enter Password" name="psw" required>
-<br>
-<br>
+    </div>
+
+    <div class="container">
       <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
+        <input type="checkbox" name="remember"> Remember me
       </label>
     </div>
 
@@ -135,11 +130,11 @@
     </div>
 
     <div class="container" style="background-color:#f1f1f1">
-      
       <span class="psw">Forgot <a href="#">password?</a></span>
     </div>
 
-    <span class="account">Don't have an acount? <a href="C:\Users\PMLS\Desktop\ShoppingCenter\signup.html">Registered</a></span>
+    <span class="account">Don't have an account? <a href="signup.html">Sign Up</a></span>
+
   </form>
 
 </body>
