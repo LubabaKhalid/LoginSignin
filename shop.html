@@ -14,6 +14,86 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
     <style>
+
+        /* Button at the top-left */
+        .menu-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .menu-btn:hover {
+            background-color: #444;
+        }
+
+        /* Button at the top-right */
+        .login-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-btn:hover {
+            background-color: #444;
+        }
+
+        /* Fixed button at the bottom */
+        button.theme-toggle-btn {
+            position: fixed;
+            bottom: 20px;  /* Adjust this value to control the space from the bottom */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20%;  /* Adjust the width as needed */
+            padding: 10px;
+            background-color: #2C3E50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button.theme-toggle-btn:hover {
+            background-color: #34495E;
+        }
+
+        button1.theme-toggle-btn {
+            position: fixed;
+            bottom: 20px;  /* Adjust this value to control the space from the bottom */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20%;  /* Adjust the width as needed */
+            padding: 10px;
+            background-color: #2C3E50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button1.theme-toggle-btn:hover {
+            background-color: #34495E;
+        }
+
         /* Light Theme */
         .light-theme {
             background-color: #f8f9fa;
@@ -52,20 +132,6 @@
         .dark-theme .theme-toggle-btn {
             background-color: #222;
             color: white;
-        }
-
-        /* Additional Styles */
-        .theme-toggle-btn {
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 4px;
-            margin-bottom: 20px;
-            transition: background-color 0.3s ease;
-        }
-
-        .theme-toggle-btn:hover {
-            background-color: #444;
         }
 
         /* Dropdown Styling */
@@ -113,6 +179,7 @@
             0% {
                 opacity: 0;
             }
+
             100% {
                 opacity: 1;
             }
@@ -154,20 +221,22 @@
             transform: scale(1.05);
             box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
         }
+
     </style>
 </head>
 
 <body class="light-theme">
 
-    <!-- Theme toggle button -->
-    <button class="theme-toggle-btn" onclick="toggleTheme()">Switch to Dark Theme</button>
+    <!-- Menu Button -->
+    <button1 class="menu-btn" onclick="myFunction()"><i class="fa fa-bars"></i> Menu</button1>
+
+    <!-- Login Button -->
+    <button1 class="login-btn" onclick="location.href='login.html'">Login</button1>
+
+    
 
     <!-- Dropdown Menu -->
     <div class="dropdown">
-        <button onclick="myFunction()" class="dropbtn">
-            <i class="fa fa-bars"></i> Menu
-        </button>
-
         <div id="myDropdown" class="dropdown-content">
             <!-- Shops Dropdown -->
             <div class="dropdown-submenu">
@@ -209,7 +278,7 @@
 
         // Close the dropdown if clicked outside
         window.onclick = function (event) {
-            if (!event.target.matches('.dropbtn')) {
+            if (!event.target.matches('.menu-btn')) {
                 var dropdowns = document.getElementsByClassName("dropdown-content");
                 for (var i = 0; i < dropdowns.length; i++) {
                     var openDropdown = dropdowns[i];
@@ -240,15 +309,51 @@
 
     <!-- Image Gallery -->
     <div class="image-container">
-        <img src="C:\Users\PMLS\Desktop\LoginSignin\saphair.jpg" alt="Saphair">
-        <img src="C:\Users\PMLS\Desktop\LoginSignin\sanas.jpg" alt="Sana's">
-        <img src="C:\Users\PMLS\Desktop\LoginSignin\warda.jpg" alt="Warda">
-        <img src="C:\Users\PMLS\Desktop\LoginSignin\kapray.jpg" alt="Kapray">
-        <img src="C:\Users\PMLS\Desktop\LoginSignin\breakout.jpg" alt="Breakout">
-        <img src="C:\Users\PMLS\Desktop\LoginSignin\MTJ.jpg" alt="MTJ">
-        <img src="C:\Users\PMLS\Desktop\LoginSignin\almirah.jpg" alt="Almirah">
-        <img src="C:\Users\PMLS\Desktop\LoginSignin\khaadi.jpg" alt="Khaadi">
+        <img src="saphair.jpg" alt="Saphair">
+        <img src="sanas.jpg" alt="Sana's">
+        <img src="warda.jpg" alt="Warda">
+        <img src="kapray.jpg" alt="Kapray">
+        <img src="breakout.jpg" alt="Breakout">
+        <img src="MTJ.jpg" alt="MTJ">
+        <img src="almirah.jpg" alt="Almirah">
+        <img src="khaadi.jpg" alt="Khaadi">
     </div>
+    
+  
+
+    <script>
+      // Function to toggle the theme
+      function toggleTheme() {
+        var body = document.body;
+        var button = document.querySelector('button');
+  
+        if (body.classList.contains('light-theme')) {
+          body.classList.remove('light-theme');
+          body.classList.add('dark-theme');
+          button.textContent = 'Switch to Light Theme';
+          localStorage.setItem('theme', 'dark'); // Save the theme preference
+        } else {
+          body.classList.remove('dark-theme');
+          body.classList.add('light-theme');
+          button.textContent = 'Switch to Dark Theme';
+          localStorage.setItem('theme', 'light'); // Save the theme preference
+        }
+      }
+  
+      // Check and apply the saved theme when the page loads
+      window.onload = function () {
+        var savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+          if (savedTheme === 'dark') {
+            document.body.classList.add('dark-theme');
+            document.querySelector('button').textContent = 'Switch to Light Theme';
+          } else {
+            document.body.classList.add('light-theme');
+            document.querySelector('button').textContent = 'Switch to Dark Theme';
+          }
+        }
+      };
+    </script>
 
 </body>
 
