@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Login</title>
+  <title>Forgot Password</title>
   <style>
     body {
       font-family: 'Arial', Helvetica, sans-serif;
@@ -14,25 +14,27 @@
     /* Light Theme Styles */
     .light-theme {
       background-color: #f9f9f9;
+      color: #333;
     }
 
     /* Dark Theme Styles */
     .dark-theme {
       background-color: #333;
+      color: #f9f9f9;
     }
 
     h2 {
       text-align: center;
       padding: 20px 0;
-      color: #333; /* Default color for light theme */
     }
 
+    /* Ensure that the title color changes with the theme */
     .light-theme h2 {
-      color: #333; /* Light theme color for login title */
+      color: #333;
     }
 
     .dark-theme h2 {
-      color: #f9f9f9; /* Dark theme color for login title */
+      color: #f9f9f9;
     }
 
     form {
@@ -53,19 +55,10 @@
       font-weight: bold;
       display: block;
       margin-bottom: 6px;
-      color: #333; /* Default color for light theme */
+      color: inherit; /* Inherit text color based on theme */
     }
 
-    .light-theme .container label {
-      color: #333; /* Light theme color for labels */
-    }
-
-    .dark-theme .container label {
-      color: #f9f9f9; /* Dark theme color for labels */
-    }
-
-    .container input[type="text"],
-    .container input[type="password"] {
+    .container input[type="text"] {
       width: 100%;
       padding: 12px;
       border: 2px solid #ccc;
@@ -74,64 +67,46 @@
       font-size: 16px;
     }
 
-    .container input[type="text"]:focus,
-    .container input[type="password"]:focus {
+    .container input[type="text"]:focus {
       border-color: #2C3E50;
       outline: none;
     }
 
-    .container input[type="checkbox"] {
-      margin-right: 10px;
-      color:#333;
-    }
-
     button {
-      position: fixed;
-      bottom: 20px;  /* Adjust this value to control the space from the bottom */
-      left: 50%;
-      transform: translateX(-50%);
-      width: 20%;  /* Adjust the width as needed */
-      padding: 10px;
-      background-color: #2C3E50;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 16px;
-      transition: background-color 0.3s;
-    }
-    
-    button:hover {
-      background-color: #34495E;
-    }
-    
-
+        position: fixed;
+        bottom: 20px;  /* Adjust this value to control the space from the bottom */
+        left: 50%;
+        transform: translateX(-50%);
+        width: 20%;  /* Adjust the width as needed */
+        padding: 10px;
+        background-color: #2C3E50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+      }
+      
+      button:hover {
+        background-color: #34495E;
+      }
+      
     button1 {
-      width: 100%;
-      padding: 14px;
-      background-color: #2C3E50;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 16px;
-      transition: background-color 0.3s;
-    }
-
-    button1:hover {
-      background-color: #34495E;
-    }
-
-    .psw {
-      float: right;
-      padding-top: 16px;
-      font-size: 14px;
-    }
-
-    .psw a {
-      text-decoration: none;
-      color: inherit; /* Inherit color from the current theme */
-    }
+        width: 100%;
+        padding: 14px;
+        background-color: #2C3E50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+      }
+  
+      button1:hover {
+        background-color: #34495E;
+      }
 
     .account {
       text-align: center;
@@ -140,7 +115,7 @@
     }
 
     .account a {
-      color: inherit; /* Inherit color from the current theme */
+      color: inherit; /* Inherit color based on theme */
       text-decoration: none;
     }
 
@@ -154,28 +129,17 @@
 </head>
 <body class="light-theme">
 
-  <h2>Login</h2>
+  <h2>Forgot Password</h2>
 
   <form action="/action_page.php" method="post">
-    <div class="container">
-      <input type="text" placeholder="Enter Username" name="uname" required>
-    </div>
 
     <div class="container">
-      <input type="password" placeholder="Enter Password" name="psw" required>
+      <input type="text" placeholder="Enter Username/Email" name="uname" required>
     </div>
-
-    
 
     <div class="container">
-      <button1 type="submit">Login</button1>
+      <button1 type="submit">Submit</button1>
     </div>
-
-    <div class="container" style="background-color:#f1f1f1">
-      <span class="psw">Forgot <a href="forgotpwd.html">password?</a></span>
-    </div>
-
-    <span class="account">Don't have an account? <a href="C:\Users\PMLS\Desktop\LoginSignin\signup.html">Sign Up</a></span>
 
   </form>
 
@@ -191,12 +155,12 @@
       if (body.classList.contains('light-theme')) {
         body.classList.remove('light-theme');
         body.classList.add('dark-theme');
-        button.textContent = 'Switch to Light Theme';
+        button.textContent = 'Switch to Light Theme';  // Change button text
         localStorage.setItem('theme', 'dark'); // Save the theme preference
       } else {
         body.classList.remove('dark-theme');
         body.classList.add('light-theme');
-        button.textContent = 'Switch to Dark Theme';
+        button.textContent = 'Switch to Dark Theme';  // Change button text
         localStorage.setItem('theme', 'light'); // Save the theme preference
       }
     }

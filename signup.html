@@ -7,15 +7,31 @@
   <style>
     body {
       font-family: 'Arial', Helvetica, sans-serif;
-      background-color: #f9f9f9;
       margin: 0;
       padding: 0;
     }
 
+    /* Light Theme Styles */
+    .light-theme {
+      background-color: #f9f9f9;
+    }
+
+    /* Dark Theme Styles */
+    .dark-theme {
+      background-color: #333;
+    }
     h2 {
       text-align: center;
       padding: 20px 0;
-      color: #333;
+      color: #333; /* Default color for light theme */
+    }
+
+    .light-theme h2 {
+      color: #333; /* Light theme color for sign up title */
+    }
+
+    .dark-theme h2 {
+      color: #f9f9f9; /* Dark theme color for sign up title */
     }
 
     form {
@@ -36,7 +52,7 @@
       font-weight: bold;
       display: block;
       margin-bottom: 6px;
-      color: #333;
+      color: inherit; /* Inherit color from the current theme */
     }
 
     .container input[type="text"],
@@ -57,7 +73,7 @@
       outline: none;
     }
 
-    button {
+    button1 {
       width: 100%;
       padding: 14px;
       background-color: #2C3E50;
@@ -69,10 +85,29 @@
       transition: background-color 0.3s;
     }
 
+    button1:hover {
+      background-color: #34495E;
+    }
+    button {
+      position: fixed;
+      bottom: 20px;  /* Adjust this value to control the space from the bottom */
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20%;  /* Adjust the width as needed */
+      padding: 10px;
+      background-color: #2C3E50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+    
     button:hover {
       background-color: #34495E;
     }
-
+    
     .account {
       text-align: center;
       font-size: 14px;
@@ -80,7 +115,7 @@
     }
 
     .account a {
-      color: #2C3E50;
+      color: inherit; /* Inherit color from the current theme */
       text-decoration: none;
     }
 
@@ -105,7 +140,7 @@
     }
   </style>
 </head>
-<body>
+<body class="light-theme">
 
   <h2>Sign Up</h2>
 
@@ -124,15 +159,49 @@
     </div>
 
     <div class="container">
-      <button type="submit">Sign Up</button>
+      <button1 type="submit">Sign Up</button1>
     </div>
 
     <span class="account">Already have an account? <a href="login.html">Login</a></span>
 
   </form>
 
+  <!-- Theme toggle button -->
+  <button onclick="toggleTheme()" style="width: 100%; margin-top: 20px;">Switch to Dark Theme</button>
+
+  <script>
+    // Function to toggle the theme
+    function toggleTheme() {
+      var body = document.body;
+      var button = document.querySelector('button');
+
+      if (body.classList.contains('light-theme')) {
+        body.classList.remove('light-theme');
+        body.classList.add('dark-theme');
+        button.textContent = 'Switch to Light Theme';  // Change button text
+        localStorage.setItem('theme', 'dark'); // Save the theme preference
+      } else {
+        body.classList.remove('dark-theme');
+        body.classList.add('light-theme');
+        button.textContent = 'Switch to Dark Theme';  // Change button text
+        localStorage.setItem('theme', 'light'); // Save the theme preference
+      }
+    }
+
+    // Check and apply the saved theme when the page loads
+    window.onload = function () {
+      var savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        if (savedTheme === 'dark') {
+          document.body.classList.add('dark-theme');
+          document.querySelector('button').textContent = 'Switch to Light Theme';
+        } else {
+          document.body.classList.add('light-theme');
+          document.querySelector('button').textContent = 'Switch to Dark Theme';
+        }
+      }
+    };
+  </script>
+
 </body>
 </html>
-
-
-
