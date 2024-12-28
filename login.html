@@ -90,14 +90,14 @@
       bottom: 20px;  /* Adjust this value to control the space from the bottom */
       left: 50%;
       transform: translateX(-50%);
-      width: 20%;  /* Adjust the width as needed */
-      padding: 10px;
+      width: 100%;  /* Adjust the width as needed */
+      padding: 20px;
       background-color: #2C3E50;
       color: white;
       border: none;
       border-radius: 4px;
       cursor: pointer;
-      font-size: 16px;
+      font-size: 10px;
       transition: background-color 0.3s;
     }
     
@@ -107,8 +107,7 @@
     
 
     button1 {
-      width: 100%;
-      padding: 14px;
+      padding: 10px 20px;
       background-color: #2C3E50;
       color: white;
       border: none;
@@ -116,11 +115,14 @@
       cursor: pointer;
       font-size: 16px;
       transition: background-color 0.3s;
-    }
-
-    button1:hover {
+      margin: 0 auto; /* Horizontally center the button */
+      display: block; /* Makes the button block-level so that margin:auto works */
+  }
+  
+  button1:hover {
       background-color: #34495E;
-    }
+  }
+  
 
     .psw {
       float: right;
