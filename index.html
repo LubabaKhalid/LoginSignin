@@ -11,19 +11,18 @@
     <style>
         /* Light Theme Styles */
         .light-theme {
-          background-color: #f9f9f9;
-          color: #333;
+            background-color: #f9f9f9;
+            color: #333;
         }
-    
+
         /* Dark Theme Styles */
         .dark-theme {
-          background-color: #333;
-          color: #f9f9f9;
+            background-color: #333;
+            color: #f9f9f9;
         }
 
         button {
-            width: 100%;
-            padding: 14px;
+            padding: 10px 20px;
             background-color: #2C3E50;
             color: white;
             border: none;
@@ -31,12 +30,12 @@
             cursor: pointer;
             font-size: 16px;
             transition: background-color 0.3s;
-          }
-      
-          button:hover {
+        }
+
+        button:hover {
             background-color: #34495E;
-          }
-    
+        }
+
         /* Global Styles */
         body {
             font-family: 'Open Sans', Arial, Helvetica, sans-serif;
@@ -55,7 +54,7 @@
             list-style: none;
             padding: 0;
             margin: 0;
-            background-color:rgb(6, 6, 6);
+            background-color: rgb(6, 6, 6);
             display: flex;
             justify-content: center;
             gap: 30px;
@@ -91,7 +90,7 @@
         /* Red Button */
         .menu-bar a.red-button {
             background-color: #E74C3C;
-            padding: 10px 20px;
+            padding: 5px 20px;
             border-radius: 5px;
             transition: background-color 0.3s ease;
         }
@@ -109,7 +108,7 @@
 
         .main-content h1 {
             font-family: 'Lobster', cursive;
-            color:rgb(7, 7, 7);
+            color: rgb(7, 7, 7);
             font-size: 50px;
             margin-bottom: 20px;
         }
@@ -142,7 +141,6 @@
                 padding: 0 20px;
             }
         }
-
     </style>
 </head>
 
@@ -155,6 +153,8 @@
         <li><a href="#about">ABOUT</a></li>
         <li><a href="login.html">LOG IN</a></li>
         <li><a class="red-button" href="signup.html">SIGN UP</a></li>
+        <!-- Theme Toggle Button -->
+        <li><button onclick="toggleTheme()">Switch to Dark Theme</button></li>
     </ul>
 
     <!-- Main Content Section -->
@@ -162,40 +162,40 @@
         <h1>Welcome to Our Shopping Center</h1>
         <p>Explore the best shopping experiences and exciting deals!</p>
     </div>
-    <button onclick="toggleTheme()" style="width: 100%; margin-top: 20px;">Switch to Dark Theme</button>
+
     <script>
         // Function to toggle the theme
         function toggleTheme() {
-          var body = document.body;
-          var button = document.querySelector('button');
-    
-          if (body.classList.contains('light-theme')) {
-            body.classList.remove('light-theme');
-            body.classList.add('dark-theme');
-            button.textContent = 'Switch to Light Theme';  // Change button text
-            localStorage.setItem('theme', 'dark'); // Save the theme preference
-          } else {
-            body.classList.remove('dark-theme');
-            body.classList.add('light-theme');
-            button.textContent = 'Switch to Dark Theme';  // Change button text
-            localStorage.setItem('theme', 'light'); // Save the theme preference
-          }
+            var body = document.body;
+            var button = document.querySelector('button');
+
+            if (body.classList.contains('light-theme')) {
+                body.classList.remove('light-theme');
+                body.classList.add('dark-theme');
+                button.textContent = 'Dark Theme';  // Change button text
+                localStorage.setItem('theme', 'dark'); // Save the theme preference
+            } else {
+                body.classList.remove('dark-theme');
+                body.classList.add('light-theme');
+                button.textContent = 'Light Theme';  // Change button text
+                localStorage.setItem('theme', 'light'); // Save the theme preference
+            }
         }
-    
+
         // Check and apply the saved theme when the page loads
         window.onload = function () {
-          var savedTheme = localStorage.getItem('theme');
-          if (savedTheme) {
-            if (savedTheme === 'dark') {
-              document.body.classList.add('dark-theme');
-              document.querySelector('button').textContent = 'Switch to Light Theme';
-            } else {
-              document.body.classList.add('light-theme');
-              document.querySelector('button').textContent = 'Switch to Dark Theme';
+            var savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                if (savedTheme === 'dark') {
+                    document.body.classList.add('dark-theme');
+                    document.querySelector('button').textContent = 'Dark Theme';
+                } else {
+                    document.body.classList.add('light-theme');
+                    document.querySelector('button').textContent = 'Light Theme';
+                }
             }
-          }
         };
-      </script>
+    </script>
 
 </body>
 
