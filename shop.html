@@ -14,9 +14,29 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
     <style>
+        img {
+            width: 100%;
+          }
         /* Styling the dropdown button */
+        .dropbtn1 {
+            background-color: rgb(10, 10, 10);
+            color: #333;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .dropbtn1:hover,
+        .dropbtn1:focus {
+            background-color: #222;
+            transform: scale(1.1);
+        }
+
         .dropbtn {
-            background-color: rgb(250, 246, 246);
+            background-color: rgb(253, 246, 246);
             color: #333;
             padding: 16px;
             font-size: 16px;
@@ -81,20 +101,20 @@
             }
         }
 
-        /* Styling the second menu (if you plan to use it) */
-        .second-menu {
-            background-color: #444;
-            margin-top: 10px;
+        /* Nested dropdown */
+        .dropdown-submenu {
+            position: relative;
         }
 
-        .second-menu a {
-            color: white;
-            padding: 10px 15px;
-            font-size: 16px;
+        .dropdown-submenu .dropdown-content {
+            top: 0;
+            left: 100%;
+            margin-top: -1px;
+            display: none;
         }
 
-        .second-menu a:hover {
-            background-color: #555;
+        .dropdown-submenu:hover .dropdown-content {
+            display: block;
         }
     </style>
 </head>
@@ -108,8 +128,28 @@
         </button>
 
         <div id="myDropdown" class="dropdown-content">
-            <a href="#"><i class="fa fa-institution"></i> Shops</a>
-            <a href="#"><i class="fa fa-th"></i> Categories</a>
+            <div class="dropdown-submenu">
+                <a href="#" class="dropbtn1"><i class="fa fa-institution"></i> Shops</a>
+                <div class="dropdown-content">
+                    <a href="#">Saphair</a>
+                    <a href="#">Sana's</a>
+                    <a href="#">Khaadi</a>
+                    <a href="#">Kapray</a>
+                    <a href="#">Warda</a>
+                    <a href="#">MTJ</a>
+                    <a href="#">Breakout</a>
+                    <a href="#">Almirah</a>
+                </div>
+            </div>
+            
+            <div class="dropdown-submenu">
+                <a href="#" class="dropbtn1"><i class="fa fa-th"></i> Categories</a>
+                <div class="dropdown-content">
+                    <a href="#">Children Wear</a>
+                    <a href="#">Women Wear</a>
+                    <a href="#">Men Wear</a>
+                </div>
+            </div>
             <a href="#"><i class="fa fa-bell"></i> New Arrivals</a>
             <a href="#"><i class="fa fa-users"></i> Best Sellers</a>
             <a href="#"><i class="fa fa-gift"></i> Offers</a>
@@ -137,6 +177,17 @@
         }
     </script>
 
+    <img src="C:\Users\PMLS\Desktop\LoginSignin\saphair.jpg" alt="HTML5 Icon" style="width:200px;height:150px;">
+    <img src="C:\Users\PMLS\Desktop\LoginSignin\sanas.jpg" alt="HTML5 Icon" style="width:128px;height:128px;">
+    <img src="C:\Users\PMLS\Desktop\LoginSignin\warda.jpg" alt="HTML5 Icon" style="width:128px;height:128px;">
+    <img src="C:\Users\PMLS\Desktop\LoginSignin\kapray.jpg" alt="HTML5 Icon" style="width:128px;height:128px;">
+    <img src="C:\Users\PMLS\Desktop\LoginSignin\breakout.jpg" alt="HTML5 Icon" style="width:128px;height:128px;">
+    <img src="C:\Users\PMLS\Desktop\LoginSignin\MTJ.jpg" alt="HTML5 Icon" style="width:128px;height:128px;">
+    <img src="C:\Users\PMLS\Desktop\LoginSignin\almirah.jpg" alt="HTML5 Icon" style="width:128px;height:128px;">
+    <img src="C:\Users\PMLS\Desktop\LoginSignin\khaadi.jpg" alt="HTML5 Icon" style="width:128px;height:128px;">
+
 </body>
+
+
 
 </html>
